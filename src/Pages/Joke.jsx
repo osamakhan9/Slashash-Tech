@@ -18,22 +18,29 @@ const Movie = () => {
 
  
   const getData = async (page, search) => {
-    if (search === "") {
+  
+        let res = await axios({
+          url: `https://icanhazdadjoke.com/search?joke?term=${search}&page=${page}`,
+          method: "GET",
+          headers: {
+              'accept': 'application/json',
+          }
+        })
+        
+  
+        let re2 = await axios({
+          url: `https://icanhazdadjoke.com/search?term=${search}`,
+          method: "GET",
+          headers: {
+              'accept': 'application/json',
+          }
+        })
+        setData(res.data);
+        console.log(re2)
+        setData(re2.data);
       
-      // let res = await axios.get(`https://icanhazdadjoke.com/search?term=${search}&api_key=2a4603c257`)
-      let res = await axios({
-        url: `https://icanhazdadjoke.com/search?joke?term=${search}&page=${page}`,
-        method: "GET",
-        headers: {
-            'accept': 'application/json',
-        }
-      })
-      setData(res.data);
-      // console.log(res.data)
-    } else {
-      // let res = await axios.get(`https://api.themoviedb.org/3/search/movie?api_key=2a4603c2f8e8f6c24e8db5289c101280&page=${page}&query=${search}`);
-      setData(res.data);
-    }
+    
+   
   }
  
   const handleClick = () => {
@@ -43,7 +50,7 @@ const Movie = () => {
     getData(page, search)
   }, [page, search]);
 
-  console.log(data);
+  // console.log(data);
   return (
     <>
       {/*Navbar */}
@@ -85,7 +92,7 @@ const Movie = () => {
         <Flex w='100%' m='auto' justifyContent='space-between' padding='0px 30px' alignItems='center'>
           <Box>
             <Link to='/'>
-              <Image maxW='100px' src='http://competishun.com/wp-content/uploads/2022/10/logo-1-e1666417639125.png' />
+              LOGO
             </Link>
           </Box>
           <Box color='#f06' onClick={() => setIsOpen(!isOpen)}>
@@ -104,21 +111,12 @@ const Movie = () => {
 
           <Text mt='3' _hover={{ color: 'blue.500' }} onClick={() => navigate("/favourite")}>Favourites</Text>
 
-          
-
-
-         
-         
-
-
+        
         </Flex>
 
       </Box>
 
       <Divider />
-
-
-
 
 
       {/* Main section */}

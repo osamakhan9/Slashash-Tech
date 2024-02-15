@@ -8,7 +8,7 @@ const Favourite = () => {
   
   const [datas,setData] = useState([]);
   const getData = async()=>{
-    let resp = await axios.get(``);
+    let resp = await axios.get(`http://localhost:3001/favourite`);
     setData(resp.data);
   }
   useEffect(()=>{

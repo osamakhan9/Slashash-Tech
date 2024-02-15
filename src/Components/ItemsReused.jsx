@@ -21,15 +21,15 @@ const ItemsReused = ({el}) => {
             >
 
                 <Box h='350' w='100%' m='auto'>
-                    <Image h='100%' w='100%' src={`https://image.tmdb.org/t/p/w500${el.poster_path}`} alt='Image' onClick={() => navigate(`/singlepage/${el.id}`)} />
+                    <Image h='100%' w='100%' src={`https://gumlet.assettype.com/Prabhatkhabar/2021-12/87ef4f37-ff61-4c0d-87e8-602cbf9cdc05/fun.jpg`} alt='Image' />
                 </Box>
                 <Box p="6">
                     <Box alignItems="baseline">
                         <Box gap='10px'>
                             <Box gap='7px' alignItems='center'>
-                                <Heading size='md'>{el.original_title}</Heading>
+                               
                                 <Text fontSize="sm" fontWeight="semibold" color="gray.600" mr="2">
-                                    Release Date: {el.release_date}
+                                    Joke : {el.joke}
                                 </Text>
 
                             </Box>
