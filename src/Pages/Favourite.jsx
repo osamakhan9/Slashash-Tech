@@ -8,7 +8,7 @@ const Favourite = () => {
   
   const [datas,setData] = useState([]);
   const getData = async()=>{
-    let resp = await axios.get(`http://localhost:3001/favourite`);
+    let resp = await axios.get(`https://slashash.onrender.com/favourite`);
     setData(resp.data);
   }
   useEffect(()=>{

@@ -12,7 +12,7 @@ const Items = ({ el }) => {
             data: el,
         }
        
-        let res = await axios.post("http://localhost:3001/favourite",value);
+        let res = await axios.post("https://slashash.onrender.com/favourite",value);
         console.log(res.data);
         // navigate(`/favourite`)
         toast({
